@@ -16,7 +16,7 @@ public class EspecialidadUpdateDto {
     private String nombre;
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,100}$", message = "Entre 2 y 100 carácteres")
+    @Pattern(regexp = "^[a-zA-Z]{2,200}$", message = "Entre 2 y 200 carácteres")
     private String descripcion;
 
     @NotBlank

@@ -17,7 +17,7 @@ public class Especialidad {
     @Column(length = 25)
     private String nombre;
 
-    @Column(length = 100)
+    @Column(length = 200)
     private String descripcion;
 
     private Boolean estado;

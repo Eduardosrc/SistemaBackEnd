@@ -26,13 +26,10 @@ public class Cita {
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
 
-    @NotBlank
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date fecha;
 
-    @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,200}$")
     private String descripcion;
 
     private Boolean estado;
