@@ -24,7 +24,7 @@ public class CitaUpdateDto {
     private Date fecha;
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,200}$")
+    @Pattern(regexp = "^[a-zA-Z]{2,200}$", message = "Entre 2 y 200 carácteres")
     private String descripcion;
 
     @NotBlank

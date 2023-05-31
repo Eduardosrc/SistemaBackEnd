@@ -9,11 +9,11 @@ import javax.validation.constraints.Pattern;
 public class EspecialidadCreateDto {
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,25}$")
+    @Pattern(regexp = "^[a-zA-Z]{2,25}$", message = "Entre 2 y 25 carácteres")
     private String nombre;
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,100}$")
+    @Pattern(regexp = "^[a-zA-Z]{2,100}$", message = "Entre 2 y 100 carácteres")
     private String descripcion;
 
     @NotBlank
