@@ -30,7 +30,7 @@ public class Paciente {
     @Column(name = "fec_nacimiento")
     private Date fechaNacimiento;
 
-    @Column(length = 8)
+    @Column(length = 9)
     private String telefono;
 
     @Column(length = 50)

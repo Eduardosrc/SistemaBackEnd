@@ -35,7 +35,7 @@ public class Medico {
     @Column(name = "fec_contratacion")
     private Date fechaContratacion;
 
-    @Column(length = 8)
+    @Column(length = 9)
     private String telefono;
 
     @Column(length = 50)

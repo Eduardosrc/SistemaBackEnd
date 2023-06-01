@@ -31,7 +31,7 @@ public class MedicoUpdateDto {
     private Date fechaContratacion;
 
     @NotBlank
-    @Pattern(regexp = "^[1-9]\\d{8}$", message = "Ingrese un número válido")
+    @Pattern(regexp = "^[1-9]\\d{9}$", message = "Ingrese un número válido")
     private String telefono;
 
     @NotBlank
