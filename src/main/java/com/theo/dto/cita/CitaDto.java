@@ -17,6 +17,8 @@ public class CitaDto {
 
     private Date fecha;
 
+    private String hora;
+
     private String descripcion;
 
 }

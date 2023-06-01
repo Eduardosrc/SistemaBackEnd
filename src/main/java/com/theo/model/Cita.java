@@ -27,8 +27,11 @@ public class Cita {
     private Paciente paciente;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha;
+
+    @Column(length = 5)
+    private String hora;
 
     private String descripcion;
 

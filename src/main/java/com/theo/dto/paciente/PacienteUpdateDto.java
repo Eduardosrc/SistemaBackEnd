@@ -23,11 +23,10 @@ public class PacienteUpdateDto {
     @Pattern(regexp = "^[a-zA-Z]{2,25}$", message = "Entre 2 y 25 carácteres")
     private String apeMaterno;
 
-    @NotBlank
     private Date fechaNacimiento;
 
     @NotBlank
-    @Pattern(regexp = "^[1-9]\\d{9}$", message = "Ingrese un número válido")
+    @Pattern(regexp = "^[1-9]\\d{8}$", message = "Ingrese un número válido")
     private String telefono;
 
     @NotBlank
