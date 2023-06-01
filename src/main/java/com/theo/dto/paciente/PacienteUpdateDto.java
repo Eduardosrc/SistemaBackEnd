@@ -9,11 +9,10 @@ import java.util.Date;
 @Data
 public class PacienteUpdateDto {
 
-    @NotBlank
     private Long id;
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,40}$", message = "Entre 2 y 40 carácteres")
+    @Pattern(regexp = "^[a-zA-Z ]{2,40}$", message = "Entre 2 y 40 carácteres")
     private String nombres;
 
     @NotBlank
@@ -35,7 +34,6 @@ public class PacienteUpdateDto {
     @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$", message = "Ingrese un correo válido")
     private String correo;
 
-    @NotBlank
     private Boolean estado;
 
 }

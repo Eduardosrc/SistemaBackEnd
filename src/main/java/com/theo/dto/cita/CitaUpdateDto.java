@@ -11,7 +11,6 @@ import java.util.Date;
 @Data
 public class CitaUpdateDto {
 
-    @NotBlank
     private Long id;
 
     @NotBlank
@@ -24,10 +23,9 @@ public class CitaUpdateDto {
     private Date fecha;
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,200}$", message = "Entre 2 y 200 carácteres")
+    @Pattern(regexp = "^[a-zA-Z ]{2,200}$", message = "Entre 2 y 200 carácteres")
     private String descripcion;
 
-    @NotBlank
     private Boolean estado;
 
 }

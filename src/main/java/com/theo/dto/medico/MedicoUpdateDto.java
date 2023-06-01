@@ -10,11 +10,10 @@ import java.util.Date;
 @Data
 public class MedicoUpdateDto {
 
-    @NotBlank
     private Long id;
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-Z]{2,40}$", message = "Entre 2 y 40 carácteres")
+    @Pattern(regexp = "^[a-zA-Z ]{2,40}$", message = "Entre 2 y 40 carácteres")
     private String nombres;
 
     @NotBlank
@@ -42,7 +41,6 @@ public class MedicoUpdateDto {
     @NotBlank
     private Especialidad especialidad;
 
-    @NotBlank
     private Boolean estado;
 
 }
