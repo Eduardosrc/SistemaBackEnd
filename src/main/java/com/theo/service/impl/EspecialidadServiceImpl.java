@@ -36,6 +36,7 @@ public class EspecialidadServiceImpl implements EspecialidadService {
 
     @Override
     public EspecialidadDto registrar(EspecialidadCreateDto especialidadCreateDto) {
+        especialidadCreateDto.setEstado(true);
         EspecialidadDto especialidadDto = EspecialidadMapper.instancia.entityCreateToEntityDto(especialidadCreateDto);
         Especialidad response = repo.save(EspecialidadMapper.instancia.entityDtoToEntity(especialidadDto));
         return EspecialidadMapper.instancia.entityToEntityDto(response);
@@ -50,6 +51,12 @@ public class EspecialidadServiceImpl implements EspecialidadService {
 
     @Override
     public EspecialidadDto eliminarPorId(Long id) {
-        return null;
+        Optional<Especialidad> especialidad = repo.findById(id);
+        if(especialidad.isPresent()){
+            repo.deleteEspecialidadById(id);
+            return EspecialidadMapper.instancia.entityToEntityDto(especialidad.get());
+        }else{
+            return null;
+        }
     }
 }

@@ -21,4 +21,6 @@ public class CitaDto {
 
     private String descripcion;
 
+    private Boolean estado;
+
 }

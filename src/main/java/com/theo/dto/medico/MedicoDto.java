@@ -26,4 +26,6 @@ public class MedicoDto {
 
     private Especialidad especialidad;
 
+    private Boolean estado;
+
 }

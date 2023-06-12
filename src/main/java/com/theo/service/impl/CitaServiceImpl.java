@@ -36,6 +36,7 @@ public class CitaServiceImpl implements CitaService {
 
     @Override
     public CitaDto registrar(CitaCreateDto citaCreateDto) {
+        citaCreateDto.setEstado(true);
         CitaDto citaDto = CitaMapper.instancia.entityCreateToEntityDto(citaCreateDto);
         Cita response = repo.save(CitaMapper.instancia.entityDtoToEntity(citaDto));
         return CitaMapper.instancia.entityToEntityDto(response);
@@ -50,6 +51,12 @@ public class CitaServiceImpl implements CitaService {
 
     @Override
     public CitaDto eliminarPorId(Long id) {
-        return null;
+        Optional<Cita> cita = repo.findById(id);
+        if(cita.isPresent()){
+            repo.deleteCitaById(id);
+            return CitaMapper.instancia.entityToEntityDto(cita.get());
+        }else{
+            return null;
+        }
     }
 }

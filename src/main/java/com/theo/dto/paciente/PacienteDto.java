@@ -21,4 +21,6 @@ public class PacienteDto {
 
     private String correo;
 
+    private Boolean estado;
+
 }

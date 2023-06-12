@@ -49,4 +49,14 @@ public class CitaController {
         }
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<CitaDto> eliminarPorId(@PathVariable("id") Long id){
+        CitaDto citaDto = service.eliminarPorId(id);
+        if(citaDto == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else{
+            return new ResponseEntity<>(citaDto, HttpStatus.OK);
+        }
+    }
+
 }

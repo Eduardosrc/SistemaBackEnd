@@ -11,4 +11,6 @@ public class EspecialidadDto {
 
     private String descripcion;
 
+    private Boolean estado;
+
 }

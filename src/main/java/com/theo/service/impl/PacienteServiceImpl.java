@@ -36,6 +36,7 @@ public class PacienteServiceImpl implements PacienteService {
 
     @Override
     public PacienteDto registrar(PacienteCreateDto pacienteCreateDto) {
+        pacienteCreateDto.setEstado(true);
         PacienteDto pacienteDto = PacienteMapper.instancia.entityCreateToEntityDto(pacienteCreateDto);
         Paciente response = repo.save(PacienteMapper.instancia.entityDtoToEntity(pacienteDto));
         return PacienteMapper.instancia.entityToEntityDto(response);
@@ -50,6 +51,12 @@ public class PacienteServiceImpl implements PacienteService {
 
     @Override
     public PacienteDto eliminarPorId(Long id) {
-        return null;
+        Optional<Paciente> paciente = repo.findById(id);
+        if(paciente.isPresent()){
+            repo.deletePacienteById(id);
+            return PacienteMapper.instancia.entityToEntityDto(paciente.get());
+        }else{
+            return null;
+        }
     }
 }

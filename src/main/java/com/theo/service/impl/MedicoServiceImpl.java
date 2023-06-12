@@ -36,6 +36,7 @@ public class MedicoServiceImpl implements MedicoService {
 
     @Override
     public MedicoDto registrar(MedicoCreateDto medicoCreateDto) {
+        medicoCreateDto.setEstado(true);
         MedicoDto medicoDto = MedicoMapper.instancia.entityCreateToEntityDto(medicoCreateDto);
         Medico response = repo.save(MedicoMapper.instancia.entityDtoToEntity(medicoDto));
         return MedicoMapper.instancia.entityToEntityDto(response);
@@ -50,6 +51,12 @@ public class MedicoServiceImpl implements MedicoService {
 
     @Override
     public MedicoDto eliminarPorId(Long id) {
-        return null;
+        Optional<Medico> medico = repo.findById(id);
+        if(medico.isPresent()){
+            repo.deleteMedicoById(id);
+            return MedicoMapper.instancia.entityToEntityDto(medico.get());
+        }else{
+            return null;
+        }
     }
 }

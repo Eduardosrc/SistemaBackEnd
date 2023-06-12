@@ -49,4 +49,14 @@ public class EspecialidadController {
         }
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<EspecialidadDto> eliminarPorId(@PathVariable("id") Long id){
+        EspecialidadDto especialidadDto = service.eliminarPorId(id);
+        if(especialidadDto == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else{
+            return new ResponseEntity<>(especialidadDto, HttpStatus.OK);
+        }
+    }
+
 }

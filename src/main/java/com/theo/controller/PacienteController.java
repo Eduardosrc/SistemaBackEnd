@@ -49,4 +49,14 @@ public class PacienteController {
         }
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<PacienteDto> eliminarPorId(@PathVariable("id") Long id){
+        PacienteDto pacienteDto = service.eliminarPorId(id);
+        if(pacienteDto == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else{
+            return new ResponseEntity<>(pacienteDto, HttpStatus.OK);
+        }
+    }
+
 }
