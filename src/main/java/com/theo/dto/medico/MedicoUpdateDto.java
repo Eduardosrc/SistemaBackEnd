@@ -3,6 +3,7 @@ package com.theo.dto.medico;
 import com.theo.model.Especialidad;
 import lombok.Data;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
@@ -33,7 +34,7 @@ public class MedicoUpdateDto {
     private String telefono;
 
     @NotBlank
-    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$", message = "Ingrese un correo válido")
+    @Email(message = "Ingrese un correo válido")
     private String correo;
 
     private Especialidad especialidad;
