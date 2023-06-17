@@ -36,7 +36,7 @@ public class EspecialidadController {
 
     @PostMapping
     public ResponseEntity<EspecialidadDto> registrar(@Valid @RequestBody EspecialidadCreateDto especialidadCreateDto){
-        return new ResponseEntity<>(service.registrar(especialidadCreateDto), HttpStatus.OK);
+        return new ResponseEntity<>(service.registrar(especialidadCreateDto), HttpStatus.CREATED);
     }
 
     @PutMapping

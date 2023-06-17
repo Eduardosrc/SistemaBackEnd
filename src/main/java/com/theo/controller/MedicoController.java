@@ -36,7 +36,7 @@ public class MedicoController {
 
     @PostMapping
     public ResponseEntity<MedicoDto> registrar(@Valid @RequestBody MedicoCreateDto medicoCreateDto){
-        return new ResponseEntity<>(service.registrar(medicoCreateDto), HttpStatus.OK);
+        return new ResponseEntity<>(service.registrar(medicoCreateDto), HttpStatus.CREATED);
     }
 
     @PutMapping

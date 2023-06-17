@@ -36,7 +36,7 @@ public class CitaController {
 
     @PostMapping
     public ResponseEntity<CitaDto> registrar(@Valid @RequestBody CitaCreateDto citaCreateDto){
-        return new ResponseEntity<>(service.registrar(citaCreateDto), HttpStatus.OK);
+        return new ResponseEntity<>(service.registrar(citaCreateDto), HttpStatus.CREATED);
     }
 
     @PutMapping
